@@ -1,4 +1,4 @@
-FROM node:8.4.0
+FROM node:9.2.0
 
 LABEL maintainer="shoma416@gmail.com"
 
@@ -42,4 +42,6 @@ RUN set -ex \
         libnss3 \
         lsb-release \
         xdg-utils \
-        wget
+        wget \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
